@@ -4,4 +4,23 @@
 
 <mapper namespace="com.codepresso.blog.repository.PostRepository">
 
+
+    <insert id="registerPost" parameterType="com.codepresso.blog.vo.Post">
+        INSERT INTO post(user_name, title, post_content)
+        VALUES(#{post.userName}, #{post.title}, #{post.postContent})
+    </insert>
+
+    <select id="findAll" resultType="com.codepresso.blog.vo.Post">
+        SELECT * FROM POST
+        <if test="id != null">
+            WHERE id = #{id}
+        </if>
+    </select>
+
+    <update id="modifyPost" parameterType="com.codepresso.blog.vo.Post">
+        UPDATE post
+        SET title=#{post.title}, post_content=#{post.postContent}
+        WHERE id=#{post.id}
+    </update>
+
 </mapper>
