@@ -33,4 +33,10 @@ public class PostController {
         return new Result(200, "Success");
     }
 
+    @DeleteMapping(value = "/posts")
+    public Result deletePosts(@RequestParam(name = "id") Integer id) {
+        postService.deletePost(id);
+        return new Result(200, "Success");
+    }
+
 }

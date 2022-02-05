@@ -23,4 +23,9 @@
         WHERE id=#{post.id}
     </update>
 
+    <delete id="deletePost" parameterType="Integer">
+        DELETE post
+        WHERE id = #{id}
+    </delete>
+
 </mapper>

@@ -8,4 +8,5 @@ public interface PostService {
     void registerPost(Post post);
     List<Post> findAll(Integer id);
     void modifyPost(Post post);
+    void deletePost(Integer id);
 }

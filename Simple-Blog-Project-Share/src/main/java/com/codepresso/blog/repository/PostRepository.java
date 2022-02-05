@@ -13,4 +13,5 @@ public interface PostRepository {
     void registerPost(@Param("post") Post post);
     List<Post> findAll(@Param("id") Integer id);
     void modifyPost(@Param("post") Post post);
+    void deletePost(@Param("id") Integer id);
 }
